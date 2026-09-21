@@ -10,3 +10,8 @@ firstString = "water"
 secondString = "fall"
 thirdString = firstString + secondString
 print(thirdString)
+
+
+# input strings
+name = input("What is your name? ")
+print(name)
