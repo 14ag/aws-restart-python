@@ -19,3 +19,19 @@ print(type(myFinalAnswerTuple))
 print(myFinalAnswerTuple[0])
 print(myFinalAnswerTuple[1])
 print(myFinalAnswerTuple[2])
+
+
+# the dictionary data type
+myFavoriteFruitDictionary = {
+  "Akua" : "apple",
+  "Saanvi" : "banana",
+  "Paulo" : "pineapple"
+}
+
+print(myFavoriteFruitDictionary)
+print(type(myFavoriteFruitDictionary))
+
+print(myFavoriteFruitDictionary["Akua"])
+print(myFavoriteFruitDictionary["Saanvi"])
+print(myFavoriteFruitDictionary["Paulo"])
+
