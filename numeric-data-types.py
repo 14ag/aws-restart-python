@@ -1,0 +1,10 @@
+# working with numeric data types
+print("Python has three numeric data types: int,float and complex")
+
+
+# the int data type
+myValue=1
+print(myValue)
+print(type(myValue))
+print(str(myValue) + " is of the data type " + str(type(myValue)))
+
