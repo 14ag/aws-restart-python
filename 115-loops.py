@@ -14,3 +14,9 @@ while isGuessRight != True:
         isGuessRight = True
     else:
         print("You guessed {}. Sorry, that isn’t it. Try again.".format(guess))
+
+
+# the for loop
+for x in range(0, 11):
+    print(x)
+    
