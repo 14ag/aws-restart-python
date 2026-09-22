@@ -11,3 +11,6 @@ insulin = bInsulin + aInsulin
 
 pKR = {'y': 10.07,'c': 8.18,'c': 8.18,'h': 6.00,'h': 6.00,'d': 3.65,'e': 4.25}
 
+insulin.count("Y")
+float(insulin.count("Y"))
+seqCount = ({x: float(insulin.count(x)) for x in ['y','c','k','h','r','d','e']})
