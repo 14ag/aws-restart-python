@@ -30,3 +30,10 @@ aInsulin="giveqcctsicslyqlenycn"
 cInsulin="rreaedlqvgqvelgggpgagslqplalegslqkr"
 
 insulin = bInsulin + aInsulin
+
+
+# Printing "the sequence of human insulin" to console using successive print() commands:
+print("The sequence of human preproinsulin:")
+
+# Printing to console using concatenated strings inside the print function (one-liner):
+print("The sequence of human insulin, chain a: " + aInsulin)
