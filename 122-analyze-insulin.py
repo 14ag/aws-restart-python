@@ -14,3 +14,13 @@ pKR = {'y': 10.07,'c': 8.18,'c': 8.18,'h': 6.00,'h': 6.00,'d': 3.65,'e': 4.25}
 insulin.count("Y")
 float(insulin.count("Y"))
 seqCount = ({x: float(insulin.count(x)) for x in ['y','c','k','h','r','d','e']})
+
+pH = 0
+while (pH <= 14):
+    netCharge = (
+    +(sum({x: ((seqCount[x]*(10**pKR[x]))/((10**pH)+(10**pKR[x]))) \
+    for x in ['k','h','r']}.values()))
+    -(sum({x: ((seqCount[x]*(10**pH))/((10**pH)+(10**pKR[x]))) \
+    for x in ['y','c','d','e']}.values())))
+    print('{0:.2f}'.format(pH), netCharge)
+    pH +=1
