@@ -20,4 +20,13 @@ with open(INSULIN_FILE, "r", encoding="utf-8") as file:
 for i in clean_data:
     print(i)
 
-        
+# Store the remaining sequence elements of human insulin in variables:
+preproInsulin="malwmrllpllallalwgpdpaaafvnqhlcgshlvealylvcgergffytpktr" \
+"reaedlqvgqvelgggpgagslqplalegslqkrgiveqcctsicslyqlenycn"
+
+lsInsulin="malwmrllpllallalwgpdpaaa"
+bInsulin="fvnqhlcgshlvealylvcgergffytpkt"
+aInsulin="giveqcctsicslyqlenycn"
+cInsulin="rreaedlqvgqvelgggpgagslqplalegslqkr"
+
+insulin = bInsulin + aInsulin
