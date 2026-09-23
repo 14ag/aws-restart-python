@@ -1,35 +1,45 @@
-from pathlib import Path
 import re
+from pathlib import Path
+
+txt="preproinsulin-seq.txt"
+
+FILE_PATH=Path(__file__).parents[0] / txt
+preproinsulin_clean=[]
+
+# print(FILE_PATH)
+
+with open(FILE_PATH, 'r') as file:
+    preproinsulin=file.readlines()
+    for i in preproinsulin:
+        if len(i.strip()) > 7:
+            entry=re.sub(r"\d+", "", i)
+            preproinsulin_clean.append(entry.strip().replace(" ",""))
+            print(preproinsulin_clean)
+
+for i in preproinsulin_clean:
+    print(len(i))
+
+with open('preproinsulin-seq-clean.txt', 'w') as file:
+    file.writelines(f"{line}\n" for line in preproinsulin_clean)
+
+big_amino_acid="".join(line for line in preproinsulin_clean)
+
+print(big_amino_acid[1])
 
 
-# clean data
-INSULIN_FILE=Path(__file__).parents[0] / "preproinsulin-seq.txt"
+def breakdown(a_acid,start,stop,filename):
+    start-=1
+    acid="".join(a_acid[i] for i in range(start,stop))
+    
+    with open(filename,'w') as file:
+        file.write(acid)
 
-clean_data=[]
-with open(INSULIN_FILE, "r", encoding="utf-8") as file:
-    insulin_data=file.readlines() #line by line array
+breakdown(big_amino_acid,1,24,"lsinsulin-seq-clean.txt")
+breakdown(big_amino_acid,25,54,"binsulin-seq-clean.txt")
+breakdown(big_amino_acid,55,89,"cinsulin-seq-clean.txt")
+breakdown(big_amino_acid,90,110,"ainsulin-seq-clean.txt")
 
-    for i in range(0,len(insulin_data)):
-        data=insulin_data[i].strip()
-        
-        #remove leading numbers and surrounding spaces
-        if len(data) > 7:
-            entry=re.sub(r"\d+", "", data)
-            clean_data.append(entry.strip())
 
-for i in clean_data:
-    print(i)
-
-# Store the remaining sequence elements of human insulin in variables:
-preproInsulin="malwmrllpllallalwgpdpaaafvnqhlcgshlvealylvcgergffytpktr" \
-"reaedlqvgqvelgggpgagslqplalegslqkrgiveqcctsicslyqlenycn"
-
-lsInsulin="malwmrllpllallalwgpdpaaa"
-bInsulin="fvnqhlcgshlvealylvcgergffytpkt"
-aInsulin="giveqcctsicslyqlenycn"
-cInsulin="rreaedlqvgqvelgggpgagslqplalegslqkr"
-
-insulin = bInsulin + aInsulin
 
 # Printing "the sequence of human insulin" to console using successive print() commands:
 print("The sequence of human preproinsulin:")
